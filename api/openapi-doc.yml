@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Diving Log API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /divers:
+    post:
+      summary: Create a new diver profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Diver'
+      responses:
+        '200':
+          description: Diver profile successfully created
+        '400':
+          description: Failed to create diver profile
+    get:
+      summary: Retrieve a list of diver IDs
+      responses:
+        '200':
+          description: List of diver IDs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DiverID'
+        '400':
+          description: Failed to retrieve diver IDs
+  /divelogs:
+    post:
+      summary: Log a new dive for a diver
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiveLog'
+      responses:
+        '200':
+          description: Dive log successfully created
+        '400':
+          description: Failed to create dive log
+components:
+  schemas:
+    Diver:
+      type: object
+      properties:
+        name:
+          type: string
+        diverEqp:
+          type: string
+    DiverID:
+      type: object
+      properties:
+        id:
+          type: integer
+    DiveLog:
+      type: object
+      properties:
+        diver_id:
+          type: integer
+        depth:
+          type: integer
+        date_time:
+          type: string
+          format: date-time
