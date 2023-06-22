@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS effat;
+USE effat;
+
+CREATE TABLE IF NOT EXISTS divers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    certification VARCHAR(100),
+    diverEqp VARCHAR(255)
+);
