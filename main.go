@@ -281,7 +281,7 @@ func getDiversInformation(c *gin.Context) {
 }
 
 func connectToDB() (*sql.DB, error) {
-        db, err := sql.Open("mysql", "root:ihackstuff@tcp(localhost:3306)/effat")
+        db, err := sql.Open("mysql", "root:ihackstuff@tcp(db:3306)/effat")
         if err != nil {
                 return nil, err
         }
