@@ -32,9 +32,12 @@ The API documentation for the microservice is available in the OpenAPI 3.0 forma
 By Running `docker run -d -p 80:8080 -e SWAGGER_JSON_URL=https://gist.githubusercontent.com/AmmrFX/99d25fbfa8f9a16ad52aa5efca93c66f/raw/60c189fe5992875936d8c3a512d9dd7ee45f1d48/openapi-scuba.json swaggerapi/swagger-ui`
 and accessing your server at `http://localhost:80/#/` you can see the API documentation as fellow 
 
-![image](https://github.com/AmmrFX/scuba-divers/assets/55325468/e23db479-d105-43fa-a8af-89a90a8c4b65)
-![image](https://github.com/AmmrFX/scuba-divers/assets/55325468/c4d7eb6e-89ec-4f98-93ee-60180e484647)
-![image](https://github.com/AmmrFX/scuba-divers/assets/55325468/057b5e05-e255-478f-bc8c-759c9da4c2a3)
+![image](https://github.com/AmmrFX/scuba-divers/assets/55325468/01b3bad6-1888-43a6-b45b-2d844c861bfb)
+![image](https://github.com/AmmrFX/scuba-divers/assets/55325468/5ca95718-f6f4-46ee-853c-b8faf5b9e621)
+![image](https://github.com/AmmrFX/scuba-divers/assets/55325468/10fc4ff6-8480-469e-ab4c-02b2b7fff380)
+
+
+
 
 
 
