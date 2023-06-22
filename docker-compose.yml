@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  scuba-divers:
+    build: .
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db:3306
+      - DB_USER=root
+      - DB_PASSWORD=ihackstuff
+      - DB_NAME=effat
+  db:
+    image: mysql:5.7
+    command: --init-file /docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=ihackstuff
+      - MYSQL_DATABASE=effat
+    ports:
+      - '3306:3306'
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+volumes:
+  db_data:
