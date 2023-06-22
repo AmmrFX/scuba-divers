@@ -22,10 +22,5 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      interval: 20s
-      timeout: 10s
-      retries: 10
 volumes:
   db_data:
