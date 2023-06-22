@@ -43,6 +43,12 @@ and accessing your server at `http://localhost:80/#/` you can see the API docume
 
 ## Docker Support
 This project includes Docker support for containerization. You can use the provided Dockerfile files to build and run the application in a Docker container.
+1. clone the repository
+2. run `docker-compose up --build -d`
+   ![image](https://github.com/AmmrFX/scuba-divers/assets/55325468/48249cf9-e81e-4cac-8d0d-3e597efe30eb)
+
+4. to remove the containers alongside with the used volume run `docker-compose down -v`
+
 
 
 
